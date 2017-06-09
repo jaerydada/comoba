@@ -1,8 +1,11 @@
 package com.spring.springGITtest1;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.spring.springGITtest1.service.SpringGITtest1Service;
 
@@ -17,5 +20,9 @@ public class SpringGITtest1Controller {
 //	===== #33. 의존객체 주입하기(DI : Dependency Injection) ===== 
     @Autowired
 	private SpringGITtest1Service service;
+ 
+//  테스트
+//    @RequestMapping(value="/hello.action", method="{request}")
+//    public String hello(HttpServletRequest req)
     
 }
