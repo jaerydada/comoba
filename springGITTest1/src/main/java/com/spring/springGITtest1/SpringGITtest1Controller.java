@@ -20,6 +20,7 @@ public class SpringGITtest1Controller {
     @Autowired
 	private SpringGITtest1Service service;
     
+<<<<<<< HEAD
     // 테스트
     @RequestMapping(value="/hello.action", method="")
     public String hello(HttpServletRequest req){
@@ -27,4 +28,16 @@ public class SpringGITtest1Controller {
     	req.setAttribute("age", 25);
     	req.setAttribute("addr", "경기도 수원시");
     }
+=======
+    
+    //테스트
+   @RequestMapping(value="/hello.action", method={dddd})
+   public String hello(HttpServletRequest req)
+
+   req.setAttribute("name", "유원제");
+   req.setAttribute("age", 25);
+   req.setAttribute("addr", "경기도 수원시");
+  
+   return "test/hello.tiles";
+>>>>>>> branch 'master' of https://github.com/yangmo112/springGITTest1
 }
