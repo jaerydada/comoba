@@ -1,5 +1,7 @@
 package com.spring.springGITtest1;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -18,4 +20,11 @@ public class SpringGITtest1Controller {
     @Autowired
 	private SpringGITtest1Service service;
     
+    // 테스트
+    @RequestMapping(value="/hello.action", method="")
+    public String hello(HttpServletRequest req){
+    	req.setAttribute("name", "유원제");
+    	req.setAttribute("age", 25);
+    	req.setAttribute("addr", "경기도 수원시");
+    }
 }
