@@ -15,6 +15,10 @@
 
 
 안녕하시니까 재민이입니다.
+
+
+하이루~~~!!!
+%
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
