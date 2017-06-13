@@ -4,28 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<<<<<<< HEAD
-<title>Insert title here123123123</title>
-=======
 
-123123123
-
-
-
-<title>코모바 22323연습용페이지</title>
->>>>>>> branch 'master' of https://github.com/yangmo112/Comoba.git
 </head>
-<<<<<<< HEAD
-<body>
-=======
-<h1>
->>>>>>> branch 'master' of https://github.com/yangmo112/Comoba.git
 
-<<<<<<< HEAD
-=======
-</h1>
+
+<h2>asdsadsadsad</h2>
+
+
 <body>
 
->>>>>>> branch 'master' of https://github.com/yangmo112/Comoba.git
+
+
 </body>
 </html>
