@@ -1,87 +1,80 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<%-- ===== #37.  tiles 중 header 페이지 만들기  ===== --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <title>Creative - Start Bootstrap Theme</title>
 
-<div align="center">
-	<ul class="nav nav-tabs mynav">
-		<li class="dropdown"><a class="dropdown-toggle"
-			data-toggle="dropdown" href="#">Home <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<li><a href="<%=request.getContextPath()%>/index.action">홈</a></li>
-				<li><a href="#">Submenu 1-2</a></li>
-				<li><a href="#">Submenu 1-3</a></li>
-			</ul></li>
-		<li class="dropdown"><a class="dropdown-toggle"
-			data-toggle="dropdown" href="#">게시판 <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<li><a href="<%=request.getContextPath()%>/list.action">목록보기</a></li>
-				<li><a href="<%=request.getContextPath()%>/add.action">글쓰기</a></li>
-				<li><a href="#">Submenu 1-3</a></li>
-			</ul></li>
-			
-			<li class="dropdown"><a class="dropdown-toggle"
-			data-toggle="dropdown" href="#">주문(통계차트) <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<li><a href="<%=request.getContextPath()%>/chart/order.action">주문하기</a></li>
-				<li><a href="<%=request.getContextPath()%>/chart/myorderchart.action">나의주문내역차트</a></li>
-				<li><a href="#">Submenu 3-3</a></li>
-			</ul></li>
-			
-<li class="dropdown"><a class="dropdown-toggle"
-			data-toggle="dropdown" href="#">제품정보 <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<li><a href="<%=request.getContextPath()%>/product/listProduct.action">제품목록</a></li>
-			</ul></li>
-		
-		<c:if test="${sessionScope.loginuser.gradelevel >= 10 }">
-		<li class="dropdown"><a class="dropdown-toggle"
-			data-toggle="dropdown" href="#">제품등록(다중파일첨부) <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-			    	<li><a href="<%=request.getContextPath()%>/product/addProduct.action">제품등록</a></li>
-				<li><a href="<%=request.getContextPath()%>/product/productStore.action">제품입고</a></li>
-			</ul></li>
-		</c:if>	
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-<c:if test="${sessionScope.loginuser.gradelevel < 10 }">
-		<li style="margin-left: 35%; margin-top: 1%;">
-		::: 환영합니다~ <span style="color: navy; font-weight: bold;">${sessionScope.loginuser.name}</span> 님  :::
-		</li>
-		</c:if>
-		
-		<c:if test="${sessionScope.loginuser.gradelevel >= 10 }">
-		<li style="margin-left: 15%; margin-top: 1%;">
-		::: 환영합니다~ <span style="color: navy; font-weight: bold;">${sessionScope.loginuser.name}</span> 님  :::
-		</li>
-		</c:if>
+    <!-- Theme CSS -->
+    <link href="css/creative.min.css" rel="stylesheet">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
+</head>
 
+<body id="page-top">
 
-			
-			
-		<li class="dropdown"><a class="dropdown-toggle"
-			data-toggle="dropdown" href="#">로그인 <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<c:if test="${sessionScope.loginuser == null}">
-				<li><a href="#">회원가입</a></li>
-				<li><a href="<%=request.getContextPath()%>/login.action">로그인</a></li>
-				</c:if>
-				
-				<c:if test="${sessionScope.loginuser != null}">
-				<li><a href="<%=request.getContextPath()%>/logout.action">로그아웃</a></li>
-				</c:if>
-			</ul></li>
-		<li><a href="#">Menu 3</a></li>
-		
-		<!-- ===== #52. 로그인 성공한 사용자 성명 출력하기. ===== -->
-		<c:if test="${sessionScope.loginuser != null}">
-		<li style="margin-left: 25%; margin-top: 1%;">
-		::: 환영합니다~ <span style="color: navy; font-weight: bold;">${sessionScope.loginuser.name}</span> 님  :::
-		</li>
-		</c:if>
-	</ul>
-</div>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
+                <hr>
+                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+            </div>
+        </div>
+    </header>
