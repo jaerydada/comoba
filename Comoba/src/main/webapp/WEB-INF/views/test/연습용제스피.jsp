@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>연습용입니다...</title>
+<title>연습용2입니다...</title>
 </head>
 <body>
-<<<<<<< HEAD
+<<<<<<< 
 		
 	재연연습용1
 </body>
