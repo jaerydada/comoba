@@ -7,7 +7,7 @@
 <title>연습용입니다...</title>
 </head>
 <body>
-<<<<<<< HEAD
+<<<<<<< HEAD 연습용2
 		
 	재연연습용1
 </body>
