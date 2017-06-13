@@ -10,6 +10,10 @@
 	Hello world! isitreal?????I'm happy!!!!!!! 이열 하하0612 0829
 =======
 	Hello world! isitreal?????I'm happy!!!!!!! SONGHEEGA
+<<<<<<< HEAD
+	
+	fff
+=======
 >>>>>>> branch 'master' of https://github.com/yangmo112/Comoba.git
 484894984
 
@@ -19,9 +23,13 @@
 
 하이루~~~!!!
 %
+>>>>>>> branch 'master' of https://github.com/yangmo112/Comoba.git
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>  The time on the server is ${serverTime}.
+
+
+ffff </P>
 
 fdfdfdfdf
 </body>

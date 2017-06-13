@@ -4,18 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>코모바 연습용페이지</title>
+<title>Insert title here</title>
 </head>
-<h1>
-나는 재연이다 옆에 월성형과 재민이가 있구만.
-</h1>
 <body>
-<<<<<<< HEAD
-코모바 연습용페이지
-=======
 
-
-
->>>>>>> branch 'master' of https://github.com/yangmo112/Comoba.git
 </body>
 </html>
