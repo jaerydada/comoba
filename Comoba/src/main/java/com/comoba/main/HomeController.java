@@ -46,12 +46,6 @@ public class HomeController {
 	    	// /Board/src/main/webapp/WEB-INF/views/main/test.jsp 파일을 생성한다.
 	    }
 	    
-	  @RequestMapping(value="/intro.action", method={RequestMethod.GET})
-	    public String intro(HttpServletRequest req) {
-	    	
-	    	return "test/intro.tiles";
-	    	// /Board/src/main/webapp/WEB-INF/views/main/test.jsp 파일을 생성한다.
-	    }
-	    
+	
 	
 }

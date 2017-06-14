@@ -9,6 +9,8 @@
 
         <!-- Bootstrap -->
         <link href="<%=request.getContextPath() %>/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<%=request.getContextPath() %>/resources/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="<%=request.getContextPath() %>/resources/bootstrap/js/bootstrap.js" rel="stylesheet">
         <!-- font awesome for icons -->
         <link href="<%=request.getContextPath() %>/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <!-- flex slider css -->
@@ -47,7 +49,7 @@
                         <ul class="list-inline top-dark-right">                      
                             <li class="hidden-sm hidden-xs"><i class="fa fa-envelope"></i> Support@mail.com</li>
                             <li class="hidden-sm hidden-xs"><i class="fa fa-phone"></i> +01 1800 453 7678</li>
-                            <li><a href="#"><i class="fa fa-lock"></i> 로그인</a></li>
+                            <li><a href="/main/login.action"><i class="fa fa-lock"></i> 로그인</a></li>
                             <li><a href="#"><i class="fa fa-user"></i> 회원가입</a></li>
                             <li><a class="topbar-icons" href="#"><span><i class="fa fa-search top-search"></i></span></a></li>
                         </ul>
