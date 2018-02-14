@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===== #26. mapper 기본설정 ===== -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<!-- ===== #27. 루트엘리먼트 & 네임스페이스 설정(프로젝트 전체 내에서 고유해야 한다.) ===== -->
+<mapper namespace="myroom">
+	<select id="followCnt" parameterType="int" resultType="int" >
+		select count(*)
+		from cmb_follow
+		where following = #{memberno}
+	</select>
+	
+	<select id="followingcnt" parameterType="int" resultType="int" >
+		select count(*)
+		from cmb_follow
+		where followed = #{memberno}
+	</select>
+	
+	
+	
+		<!-- 내가 팔로우 한 사람 번호 뽑기 -->
+	<select id="followList" parameterType="int" resultType="int" >
+		select following
+		from cmb_follow
+		where followed = #{memberno}
+	</select>
+	
+	<select id="followInfo" parameterType="int" resultType="com.comoba.main.model.MemberVO" >
+		select memberno, nickname, pwd, email, studycnt, comments
+		from cmb_member
+		where memberno = #{followno} 
+	</select>
+	
+	
+	<!-- 날 팔로우 한 사람 번호 뽑기 -->
+	<select id="followingList" parameterType="int" resultType="int" >
+		select followed
+		from cmb_follow
+		where following = #{memberno}
+	</select>
+	
+	<select id="followingInfo" parameterType="int" resultType="com.comoba.main.model.MemberVO" >
+		select memberno, nickname, pwd, email, studycnt, comments
+		from cmb_member
+		where memberno = #{followingno}
+	</select>
+	
+	
+	
+	
+	<!-- 스토리 리스트(재민이가 수정해줘야함) -->
+    <resultMap type="java.util.HashMap" id="getListStoryMap">
+        <result property="STORY_NO"             column="story_no"          javaType="String" />
+      <result property="NICKNAME"             column="nickname"          javaType="String" />
+      <result property="STORY_PUBLICSTATUS"      column="story_publicStatus" javaType="String" />
+       <result property="THUMBNAILFILENAME"        column="thumbnailFileName"    javaType="String" />
+   </resultMap>
+   <select id="myStoryList" resultMap="getListStoryMap" parameterType="int">
+      select A.story_no, A.nickname, A.story_publicStatus, B.thumbnailfilename
+                                               from view_cmb_storyinfo A left join
+                                                 ( select *
+                                                   from cmb_story_file
+                                                   where file_no in (select min(file_no)
+                                                                     from cmb_story_file
+                                                                     group by story_no)) B
+                                             on A.story_no = B.story_no
+                                              where memberno_fk = #{memberno}
+   </select>
+   
+	
+</mapper>

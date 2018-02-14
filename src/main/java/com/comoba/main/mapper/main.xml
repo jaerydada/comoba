@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===== #26. mapper 기본설정 ===== -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<!-- ===== #27. 루트엘리먼트 & 네임스페이스 설정(프로젝트 전체 내에서 고유해야 한다.) ===== -->
+<mapper namespace="main">
+
+	<!--     #48. 로그인 여부 알아오기 -->
+   <select id="loginEnd" parameterType="java.util.HashMap" resultType="int">
+      select case( select count(*)
+                   from spring_jsp_member
+                   where userid = #{userid} and
+                         pwd= #{pwd})
+              when 1 then 1
+               else( case(select count(*) 
+                  from spring_jsp_member
+                  where userid=#{userid})
+                 when 1 then 0
+                 else -1
+                 end
+                 )
+             end as LOGINCHECK
+      from dual
+   </select>
+   
+ <!--   #51. 로그인 성공한 사용자 정보 가져오기 -->
+   <select id="getLoginMember" parameterType="String" resultType="com.comoba.main.model.MemberVO">
+      select idx, userid, name, pwd, email, hp1, hp2, hp3
+           ,post1, post2, addr1, addr2
+           ,to_char(joindate, 'yyyy-mm-dd') as joindate
+           ,status<!-- , coin, point, gradelevel  -->
+      from spring_jsp_member
+      where status = 1 and userid = #{userid}     
+   </select>
+   
+   
+   
+   <!--  계정의 회원번호를 가져오는 메소드   -->
+   <select id="getstudyroom_no" resultType="int">
+		select seq_cmb_studyroom.nextval
+		from dual
+	</select>
+   
+   
+   	<insert id="addStudyroom" parameterType="java.util.HashMap">
+		insert into cmb_studyroom(studyroom_no, studyroom_name, addr1, addr2, hp, cost, longitude, latitude) 
+		values(seq_cmb_studyroom.nextval, #{studyroom_name}, #{addr1}, #{addr2}, #{hp}, #{cost}, #{longitude}, #{latitude})  
+	</insert>
+   
+   
+    <insert id="addStudyroomimage" parameterType="java.util.HashMap">
+    	insert into cmb_studyroom_addfile(addfile_no, fk_studyroom_no, imagefilename, imageorgFilename, imagefileSize, thumbnailFileName) 
+		values(seq_cmb_studyroom_addfile.nextval, 5, #{imagefilename}, #{imageorgFilename}, #{imagefileSize}, #{thumbnailFileName})  
+    </insert>
+   
+
+</mapper>
