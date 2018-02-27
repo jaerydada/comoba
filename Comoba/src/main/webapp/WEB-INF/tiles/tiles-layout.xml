@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+ 
 <!-- ===== #34. tiles 레이아웃 설정하기 ===== -->
 
 <!DOCTYPE tiles-definitions PUBLIC
@@ -11,7 +11,7 @@
 	<definition name="layout-tiles"     template="/WEB-INF/tiles/layout/layout-tiles.jsp"> 
 		<put-attribute name="header"    value="/WEB-INF/tiles/tile/header.jsp" />
 		<put-attribute name="content"   value="" />
-	<!-- 	<put-attribute name="sideinfo"  value="/WEB-INF/tiles/tile/sideinfo.jsp" /> -->
+	 	<put-attribute name="sideinfo"  value="/WEB-INF/tiles/tile/sideinfo.jsp" />
 		<put-attribute name="footer"    value="/WEB-INF/tiles/tile/footer.jsp" />
 	</definition>
 	
@@ -54,7 +54,7 @@
 	<definition name="*.notiles" extends="layout-notiles">
 		<put-attribute name="content" value="/WEB-INF/viewsnotiles/{1}.jsp"/>
 	</definition>
-	<definition name="*/*.notiles" extends="layout-tiles2">
+	<definition name="*/*.notiles" extends="layout-notiles">
 		<put-attribute name="content" value="/WEB-INF/viewsnotiles/{1}/{2}.jsp"/>
 	</definition>
 	<!-- tiles 를 사용하지 않는 레이아웃 설정 끝 -->
